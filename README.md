@@ -1,6 +1,6 @@
 <div align="center">
 
-  # 🔐 Manan Mandal
+  #  MANAN MANDAL
   ### **Information Security Engineer • Threat Hunter • Security Tool Builder**
 
   <p align="center">
