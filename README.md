@@ -107,9 +107,15 @@ I am a security engineer and developer focused on turning security problems into
 
 ---
 
-### 🧰 Technical Arsenal
+### 🧰 Technical Arsenal & Skills Matrix
 
 <div align="center">
+  <img src="assets/matrix_tech_arsenal.svg" alt="Decoder420 Matrix Tech Arsenal" width="100%" />
+</div>
+
+<details>
+  <summary><b>🔍 Click to expand Quick-Reference Skill Tags</b></summary>
+  <br />
 
 | Domain | Technologies, Frameworks & Tooling |
 | :--- | :--- |
@@ -119,7 +125,7 @@ I am a security engineer and developer focused on turning security problems into
 | **AI, Data & Analytics** | ![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white) ![Scikit-Learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white) ![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white) ![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white) ![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white) ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white) |
 | **Infrastructure & DevOps** | ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black) ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white) ![Nginx](https://img.shields.io/badge/Nginx-009639?style=flat-square&logo=nginx&logoColor=white) ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white) ![SQLite](https://img.shields.io/badge/SQLite-07405E?style=flat-square&logo=sqlite&logoColor=white) |
 
-</div>
+</details>
 
 ---
 

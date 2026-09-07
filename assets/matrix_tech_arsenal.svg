@@ -1,0 +1,463 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" width="100%" height="100%">
+  <defs>
+    <!-- Glow Filters -->
+    <filter id="matrixGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Linear Gradients -->
+    <linearGradient id="terminalBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#040907" />
+      <stop offset="100%" stop-color="#020503" />
+    </linearGradient>
+
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0b1710" />
+      <stop offset="100%" stop-color="#060e0a" />
+    </linearGradient>
+
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#07140c" stop-opacity="0.90" />
+      <stop offset="100%" stop-color="#030905" stop-opacity="0.95" />
+    </linearGradient>
+
+    <!-- Fade mask for matrix rain -->
+    <linearGradient id="rainFade" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0" />
+      <stop offset="12%" stop-color="#fff" stop-opacity="0.85" />
+      <stop offset="88%" stop-color="#fff" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#fff" stop-opacity="0.05" />
+    </linearGradient>
+
+    <mask id="rainMask">
+      <rect x="0" y="40" width="880" height="430" fill="url(#rainFade)" />
+    </mask>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&amp;display=swap');
+
+      text {
+        font-family: 'Fira Code', monospace, -apple-system, sans-serif;
+      }
+
+      /* Blinking Cursor */
+      @keyframes blink {
+        0%, 49% { opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+      .cursor {
+        animation: blink 0.9s infinite;
+      }
+
+      /* Radar Pulse */
+      @keyframes radarSweep {
+        0% { opacity: 0.3; }
+        50% { opacity: 0.95; }
+        100% { opacity: 0.3; }
+      }
+      .pulse {
+        animation: radarSweep 2.2s ease-in-out infinite;
+      }
+
+      /* Cyber badge interactive hover */
+      .badge-bg {
+        transition: all 0.25s ease;
+      }
+      .badge-bg:hover {
+        fill: #00ff66;
+        fill-opacity: 0.22;
+        stroke: #00ff66;
+      }
+    </style>
+  </defs>
+
+  <!-- Terminal Window Outer Frame -->
+  <rect x="0" y="0" width="880" height="470" rx="10" fill="url(#terminalBg)" stroke="#00ff66" stroke-width="1.2" stroke-opacity="0.4" />
+
+  <!-- Terminal Header Bar -->
+  <rect x="0" y="0" width="880" height="38" rx="10" fill="url(#headerGrad)" />
+  <rect x="0" y="28" width="880" height="10" fill="url(#headerGrad)" />
+  <line x1="0" y1="38" x2="880" y2="38" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.3" />
+
+  <!-- Window Dots -->
+  <circle cx="22" cy="19" r="6" fill="#ff5f56" />
+  <circle cx="40" cy="19" r="6" fill="#ffbd2e" />
+  <circle cx="58" cy="19" r="6" fill="#27c93f" />
+
+  <!-- Header Title -->
+  <text x="82" y="24" fill="#00ff66" font-size="12.5" font-weight="600" opacity="0.95" letter-spacing="0.5">
+    decoder420@soc-terminal: ~/arsenal/matrix_tech_view.sh
+  </text>
+  
+  <!-- Right HUD Indicator -->
+  <g transform="translate(680, 12)">
+    <rect x="0" y="0" width="180" height="16" rx="4" fill="#02140a" stroke="#00ff66" stroke-width="0.7" stroke-opacity="0.6" />
+    <circle cx="10" cy="8" r="3.5" fill="#00ff66" class="pulse" />
+    <text x="20" y="11.5" fill="#00ff66" font-size="9.5" font-weight="600" letter-spacing="0.8">SYSTEMS OPERATIONAL</text>
+  </g>
+
+  <!-- MATRIX DIGITAL RAIN LAYER (Background Animated with SMIL) -->
+  <g mask="url(#rainMask)" opacity="0.25" font-size="12" font-weight="500" letter-spacing="2">
+    <!-- Col 1 -->
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0,-380; 0,500" dur="4.2s" repeatCount="indefinite" />
+      <text x="35" y="0" fill="#a8ffb2">0x7F</text>
+      <text x="35" y="18" fill="#00ff66">1</text>
+      <text x="35" y="36" fill="#00dd55">0</text>
+      <text x="35" y="54" fill="#00aa44">S</text>
+      <text x="35" y="72" fill="#008833">I</text>
+      <text x="35" y="90" fill="#006622">E</text>
+      <text x="35" y="108" fill="#004411">M</text>
+      <text x="35" y="126" fill="#00330d">1</text>
+      <text x="35" y="144" fill="#00220a">0</text>
+    </g>
+    <!-- Col 2 -->
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0,-420; 0,500" dur="3.5s" begin="-1.4s" repeatCount="indefinite" />
+      <text x="105" y="0" fill="#ffffff">YARA</text>
+      <text x="105" y="18" fill="#00ff66">0</text>
+      <text x="105" y="36" fill="#00dd55">1</text>
+      <text x="105" y="54" fill="#00aa44">1</text>
+      <text x="105" y="72" fill="#008833">0</text>
+      <text x="105" y="90" fill="#006622">S</text>
+      <text x="105" y="108" fill="#004411">O</text>
+      <text x="105" y="126" fill="#00330d">C</text>
+    </g>
+    <!-- Col 3 -->
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0,-350; 0,500" dur="5.0s" begin="-2.7s" repeatCount="indefinite" />
+      <text x="180" y="0" fill="#a8ffb2">01</text>
+      <text x="180" y="18" fill="#00ff66">Z</text>
+      <text x="180" y="36" fill="#00dd55">A</text>
+      <text x="180" y="54" fill="#00aa44">P</text>
+      <text x="180" y="72" fill="#008833">1</text>
+      <text x="180" y="90" fill="#006622">0</text>
+      <text x="180" y="108" fill="#004411">1</text>
+    </g>
+    <!-- Col 4 -->
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0,-380; 0,500" dur="3.8s" begin="-0.8s" repeatCount="indefinite" />
+      <text x="260" y="0" fill="#ffffff">SIGMA</text>
+      <text x="260" y="18" fill="#00ff66">0</text>
+      <text x="260" y="36" fill="#00dd55">1</text>
+      <text x="260" y="54" fill="#00aa44">0</text>
+      <text x="260" y="72" fill="#008833">1</text>
+      <text x="260" y="90" fill="#006622">0</text>
+    </g>
+    <!-- Col 5 -->
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0,-420; 0,500" dur="4.6s" begin="-3.1s" repeatCount="indefinite" />
+      <text x="340" y="0" fill="#a8ffb2">TCP</text>
+      <text x="340" y="18" fill="#00ff66">1</text>
+      <text x="340" y="36" fill="#00dd55">1</text>
+      <text x="340" y="54" fill="#00aa44">0</text>
+      <text x="340" y="72" fill="#008833">R</text>
+      <text x="340" y="90" fill="#006622">E</text>
+      <text x="340" y="108" fill="#004411">C</text>
+    </g>
+    <!-- Col 6 -->
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0,-350; 0,500" dur="3.9s" begin="-1.9s" repeatCount="indefinite" />
+      <text x="420" y="0" fill="#ffffff">0x2A</text>
+      <text x="420" y="18" fill="#00ff66">0</text>
+      <text x="420" y="36" fill="#00dd55">1</text>
+      <text x="420" y="54" fill="#00aa44">P</text>
+      <text x="420" y="72" fill="#008833">Y</text>
+      <text x="420" y="90" fill="#006622">T</text>
+      <text x="420" y="108" fill="#004411">H</text>
+    </g>
+    <!-- Col 7 -->
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0,-380; 0,500" dur="4.8s" begin="-2.3s" repeatCount="indefinite" />
+      <text x="500" y="0" fill="#a8ffb2">CVSS</text>
+      <text x="500" y="18" fill="#00ff66">9</text>
+      <text x="500" y="36" fill="#00dd55">.</text>
+      <text x="500" y="54" fill="#00aa44">8</text>
+      <text x="500" y="72" fill="#008833">0</text>
+      <text x="500" y="90" fill="#006622">1</text>
+    </g>
+    <!-- Col 8 -->
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0,-420; 0,500" dur="3.6s" begin="-0.5s" repeatCount="indefinite" />
+      <text x="580" y="0" fill="#ffffff">SSRF</text>
+      <text x="580" y="18" fill="#00ff66">0</text>
+      <text x="580" y="36" fill="#00dd55">1</text>
+      <text x="580" y="54" fill="#00aa44">1</text>
+      <text x="580" y="72" fill="#008833">0</text>
+    </g>
+    <!-- Col 9 -->
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0,-350; 0,500" dur="4.4s" begin="-3.7s" repeatCount="indefinite" />
+      <text x="660" y="0" fill="#a8ffb2">AES</text>
+      <text x="660" y="18" fill="#00ff66">2</text>
+      <text x="660" y="36" fill="#00dd55">5</text>
+      <text x="660" y="54" fill="#00aa44">6</text>
+      <text x="660" y="72" fill="#008833">1</text>
+      <text x="660" y="90" fill="#006622">0</text>
+    </g>
+    <!-- Col 10 -->
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0,-380; 0,500" dur="4.1s" begin="-1.2s" repeatCount="indefinite" />
+      <text x="735" y="0" fill="#ffffff">FERNET</text>
+      <text x="735" y="18" fill="#00ff66">0</text>
+      <text x="735" y="36" fill="#00dd55">1</text>
+      <text x="735" y="54" fill="#00aa44">0</text>
+      <text x="735" y="72" fill="#008833">1</text>
+    </g>
+    <!-- Col 11 -->
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0,-420; 0,500" dur="4.9s" begin="-2.5s" repeatCount="indefinite" />
+      <text x="810" y="0" fill="#a8ffb2">ROOT</text>
+      <text x="810" y="18" fill="#00ff66">1</text>
+      <text x="810" y="36" fill="#00dd55">0</text>
+      <text x="810" y="54" fill="#00aa44">1</text>
+      <text x="810" y="72" fill="#008833">0</text>
+    </g>
+  </g>
+
+  <!-- FOREGROUND HUD PANELS: TECH CATEGORIES -->
+
+  <!-- Panel 1: Defensive Operations & SOC -->
+  <g transform="translate(25, 55)">
+    <rect width="405" height="160" rx="8" fill="url(#cardGrad)" stroke="#00ff66" stroke-width="1" stroke-opacity="0.35" />
+    <rect width="405" height="28" rx="8" fill="#0c1e13" fill-opacity="0.9" />
+    <rect y="20" width="405" height="8" fill="#0c1e13" fill-opacity="0.9" />
+    <text x="14" y="19" fill="#00ff66" font-size="12" font-weight="700" letter-spacing="1">
+      [01] DEFENSIVE OPERATIONS &amp; SOC
+    </text>
+    <circle cx="388" cy="14" r="3" fill="#00ff66" />
+
+    <!-- Badges -->
+    <g transform="translate(14, 38)">
+      <rect width="78" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="39" y="16.5" fill="#aaffcc" font-size="10" font-weight="600" text-anchor="middle">SIEM Logs</text>
+    </g>
+    <g transform="translate(100, 38)">
+      <rect width="90" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="45" y="16.5" fill="#aaffcc" font-size="10" font-weight="600" text-anchor="middle">Sigma Rules</text>
+    </g>
+    <g transform="translate(198, 38)">
+      <rect width="88" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="44" y="16.5" fill="#aaffcc" font-size="10" font-weight="600" text-anchor="middle">YARA Engine</text>
+    </g>
+    <g transform="translate(294, 38)">
+      <rect width="97" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="48.5" y="16.5" fill="#aaffcc" font-size="10" font-weight="600" text-anchor="middle">Sysmon Triage</text>
+    </g>
+
+    <g transform="translate(14, 73)">
+      <rect width="112" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="56" y="16.5" fill="#aaffcc" font-size="10" font-weight="600" text-anchor="middle">MITRE ATT&amp;CK</text>
+    </g>
+    <g transform="translate(134, 73)">
+      <rect width="124" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="62" y="16.5" fill="#aaffcc" font-size="10" font-weight="600" text-anchor="middle">Threat Hunting</text>
+    </g>
+    <g transform="translate(266, 73)">
+      <rect width="125" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="62.5" y="16.5" fill="#aaffcc" font-size="10" font-weight="600" text-anchor="middle">Incident Forensics</text>
+    </g>
+
+    <g transform="translate(14, 108)">
+      <rect width="138" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="69" y="16.5" fill="#00f2fe" font-size="10" font-weight="600" text-anchor="middle">SOAR Automation</text>
+    </g>
+    <g transform="translate(160, 108)">
+      <rect width="112" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="56" y="16.5" fill="#aaffcc" font-size="10" font-weight="600" text-anchor="middle">IOC Watchlists</text>
+    </g>
+    <g transform="translate(280, 108)">
+      <rect width="111" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="55.5" y="16.5" fill="#aaffcc" font-size="10" font-weight="600" text-anchor="middle">Audit Trails</text>
+    </g>
+  </g>
+
+  <!-- Panel 2: Offensive Security & AppSec -->
+  <g transform="translate(450, 55)">
+    <rect width="405" height="160" rx="8" fill="url(#cardGrad)" stroke="#00ff66" stroke-width="1" stroke-opacity="0.35" />
+    <rect width="405" height="28" rx="8" fill="#0c1e13" fill-opacity="0.9" />
+    <rect y="20" width="405" height="8" fill="#0c1e13" fill-opacity="0.9" />
+    <text x="14" y="19" fill="#00ff66" font-size="12" font-weight="700" letter-spacing="1">
+      [02] OFFENSIVE SECURITY &amp; APPSEC
+    </text>
+    <circle cx="388" cy="14" r="3" fill="#00ff66" />
+
+    <!-- Badges -->
+    <g transform="translate(14, 38)">
+      <rect width="98" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="49" y="16.5" fill="#aaffcc" font-size="10" font-weight="600" text-anchor="middle">OWASP ZAP</text>
+    </g>
+    <g transform="translate(120, 38)">
+      <rect width="90" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="45" y="16.5" fill="#aaffcc" font-size="10" font-weight="600" text-anchor="middle">Burp Suite</text>
+    </g>
+    <g transform="translate(218, 38)">
+      <rect width="84" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="42" y="16.5" fill="#aaffcc" font-size="10" font-weight="600" text-anchor="middle">Nessus</text>
+    </g>
+    <g transform="translate(310, 38)">
+      <rect width="81" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="40.5" y="16.5" fill="#aaffcc" font-size="10" font-weight="600" text-anchor="middle">Wireshark</text>
+    </g>
+
+    <g transform="translate(14, 73)">
+      <rect width="118" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="59" y="16.5" fill="#aaffcc" font-size="10" font-weight="600" text-anchor="middle">Nuclei Scanner</text>
+    </g>
+    <g transform="translate(140, 73)">
+      <rect width="126" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="63" y="16.5" fill="#00f2fe" font-size="10" font-weight="600" text-anchor="middle">SSRF Guardrails</text>
+    </g>
+    <g transform="translate(274, 73)">
+      <rect width="117" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="58.5" y="16.5" fill="#aaffcc" font-size="10" font-weight="600" text-anchor="middle">DAST / SAST</text>
+    </g>
+
+    <g transform="translate(14, 108)">
+      <rect width="86" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="43" y="16.5" fill="#aaffcc" font-size="10" font-weight="600" text-anchor="middle">Nmap Recon</text>
+    </g>
+    <g transform="translate(108, 108)">
+      <rect width="144" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="72" y="16.5" fill="#aaffcc" font-size="10" font-weight="600" text-anchor="middle">Credential Vaulting</text>
+    </g>
+    <g transform="translate(260, 108)">
+      <rect width="131" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="65.5" y="16.5" fill="#aaffcc" font-size="10" font-weight="600" text-anchor="middle">Site Tree Mapping</text>
+    </g>
+  </g>
+
+  <!-- Panel 3: Tooling, Languages & Frameworks -->
+  <g transform="translate(25, 230)">
+    <rect width="405" height="160" rx="8" fill="url(#cardGrad)" stroke="#00ff66" stroke-width="1" stroke-opacity="0.35" />
+    <rect width="405" height="28" rx="8" fill="#0c1e13" fill-opacity="0.9" />
+    <rect y="20" width="405" height="8" fill="#0c1e13" fill-opacity="0.9" />
+    <text x="14" y="19" fill="#00ff66" font-size="12" font-weight="700" letter-spacing="1">
+      [03] DEVELOPMENT &amp; SECURITY TOOLING
+    </text>
+    <circle cx="388" cy="14" r="3" fill="#00ff66" />
+
+    <!-- Badges -->
+    <g transform="translate(14, 38)">
+      <rect width="76" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="38" y="16.5" fill="#00f2fe" font-size="10" font-weight="600" text-anchor="middle">Python</text>
+    </g>
+    <g transform="translate(98, 38)">
+      <rect width="98" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="49" y="16.5" fill="#aaffcc" font-size="10" font-weight="600" text-anchor="middle">Bash / Shell</text>
+    </g>
+    <g transform="translate(204, 38)">
+      <rect width="84" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="42" y="16.5" fill="#aaffcc" font-size="10" font-weight="600" text-anchor="middle">Flask API</text>
+    </g>
+    <g transform="translate(296, 38)">
+      <rect width="95" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="47.5" y="16.5" fill="#aaffcc" font-size="10" font-weight="600" text-anchor="middle">FastAPI</text>
+    </g>
+
+    <g transform="translate(14, 73)">
+      <rect width="84" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="42" y="16.5" fill="#aaffcc" font-size="10" font-weight="600" text-anchor="middle">React 18</text>
+    </g>
+    <g transform="translate(106, 73)">
+      <rect width="112" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="56" y="16.5" fill="#aaffcc" font-size="10" font-weight="600" text-anchor="middle">Async WebSockets</text>
+    </g>
+    <g transform="translate(226, 73)">
+      <rect width="78" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="39" y="16.5" fill="#aaffcc" font-size="10" font-weight="600" text-anchor="middle">SQLAlchemy</text>
+    </g>
+    <g transform="translate(312, 73)">
+      <rect width="79" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="39.5" y="16.5" fill="#aaffcc" font-size="10" font-weight="600" text-anchor="middle">Git / CI/CD</text>
+    </g>
+
+    <g transform="translate(14, 108)">
+      <rect width="110" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="55" y="16.5" fill="#aaffcc" font-size="10" font-weight="600" text-anchor="middle">Eventlet Server</text>
+    </g>
+    <g transform="translate(132, 108)">
+      <rect width="128" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="64" y="16.5" fill="#aaffcc" font-size="10" font-weight="600" text-anchor="middle">RESTful Endpoints</text>
+    </g>
+    <g transform="translate(268, 108)">
+      <rect width="123" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="61.5" y="16.5" fill="#aaffcc" font-size="10" font-weight="600" text-anchor="middle">Microservices</text>
+    </g>
+  </g>
+
+  <!-- Panel 4: AI Models & Infrastructure -->
+  <g transform="translate(450, 230)">
+    <rect width="405" height="160" rx="8" fill="url(#cardGrad)" stroke="#00ff66" stroke-width="1" stroke-opacity="0.35" />
+    <rect width="405" height="28" rx="8" fill="#0c1e13" fill-opacity="0.9" />
+    <rect y="20" width="405" height="8" fill="#0c1e13" fill-opacity="0.9" />
+    <text x="14" y="19" fill="#00ff66" font-size="12" font-weight="700" letter-spacing="1">
+      [04] AI, DATA &amp; INFRASTRUCTURE
+    </text>
+    <circle cx="388" cy="14" r="3" fill="#00ff66" />
+
+    <!-- Badges -->
+    <g transform="translate(14, 38)">
+      <rect width="96" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="48" y="16.5" fill="#00f2fe" font-size="10" font-weight="600" text-anchor="middle">Scikit-Learn</text>
+    </g>
+    <g transform="translate(118, 38)">
+      <rect width="96" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="48" y="16.5" fill="#aaffcc" font-size="10" font-weight="600" text-anchor="middle">TensorFlow</text>
+    </g>
+    <g transform="translate(222, 38)">
+      <rect width="84" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="42" y="16.5" fill="#aaffcc" font-size="10" font-weight="600" text-anchor="middle">OpenCV</text>
+    </g>
+    <g transform="translate(314, 38)">
+      <rect width="77" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="38.5" y="16.5" fill="#aaffcc" font-size="10" font-weight="600" text-anchor="middle">Pandas</text>
+    </g>
+
+    <g transform="translate(14, 73)">
+      <rect width="128" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="64" y="16.5" fill="#aaffcc" font-size="10" font-weight="600" text-anchor="middle">Risk Classification</text>
+    </g>
+    <g transform="translate(150, 73)">
+      <rect width="124" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="62" y="16.5" fill="#aaffcc" font-size="10" font-weight="600" text-anchor="middle">Time-Series Forecast</text>
+    </g>
+    <g transform="translate(282, 73)">
+      <rect width="109" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="54.5" y="16.5" fill="#aaffcc" font-size="10" font-weight="600" text-anchor="middle">Streamlit Hub</text>
+    </g>
+
+    <g transform="translate(14, 108)">
+      <rect width="102" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="51" y="16.5" fill="#aaffcc" font-size="10" font-weight="600" text-anchor="middle">Linux (Kali/Ubuntu)</text>
+    </g>
+    <g transform="translate(124, 108)">
+      <rect width="88" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="44" y="16.5" fill="#00f2fe" font-size="10" font-weight="600" text-anchor="middle">Docker</text>
+    </g>
+    <g transform="translate(220, 108)">
+      <rect width="82" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="41" y="16.5" fill="#aaffcc" font-size="10" font-weight="600" text-anchor="middle">Nginx Proxy</text>
+    </g>
+    <g transform="translate(310, 108)">
+      <rect width="81" height="25" rx="5" fill="#061c10" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.5" class="badge-bg" />
+      <text x="40.5" y="16.5" fill="#aaffcc" font-size="10" font-weight="600" text-anchor="middle">PostgreSQL</text>
+    </g>
+  </g>
+
+  <!-- Terminal Bottom Footer Bar -->
+  <g transform="translate(25, 410)">
+    <rect width="830" height="38" rx="6" fill="#06120a" stroke="#00ff66" stroke-width="0.8" stroke-opacity="0.4" />
+    <text x="18" y="24" fill="#00ff66" font-size="11.5" font-weight="500">
+      root@decodex:~# check-telemetry --skills --status
+    </text>
+    <text x="375" y="24" fill="#00f2fe" font-size="11.5" font-weight="600">
+      [SUCCESS] 42/42 security modules synced
+    </text>
+    <text x="645" y="24" fill="#00ff66" font-size="13" font-weight="700" class="cursor">_</text>
+  </g>
+</svg>
